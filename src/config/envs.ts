@@ -1,26 +1,30 @@
-import 'doten/config';
+import 'dotenv/config';
 import * as joi from 'joi';
 
-
 interface EnvVars {
-    PORT: number;
+  PORT: number;
+  DATABASE_URL: string;
 }
 
 const envsSchema = joi.object({
-    PORT: joi.number().required()
+  PORT: joi.number().required(),
+  DATABASE_URL: joi.string().required(),
 })
-    .unknown(true);
+.unknown(true);
 
-const { error, value } = envsSchema.validate(process.env);
+const { error, value } = envsSchema.validate( process.env );
 
-if (error) {
-    throw new Error(`config validation error : ${error.message}`)
+
+if ( error ) {
+  throw new Error(`Config validation error: ${ error.message }`);
 }
 
-const envVars: EnvVars = value;
+const envVars:EnvVars = value;
+
 
 export const envs = {
-    port: envVars.PORT,
+  port: envVars.PORT,
+  databaseUrl: envVars.DATABASE_URL,
 }
 ////////////////////////////////////
 // lo que es lo de arriba se pude hacer un snipet y llamarlo cada vez que se tenga que usar ya que rara vez cambia esta config
