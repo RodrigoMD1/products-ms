@@ -24,7 +24,7 @@ export class ProductsService extends PrismaClient implements OnModuleInit {
 
   }
 
-  // esto de abajo permite buscar todo de la base de datos con la pagination incluido 
+  // esto de abajo permite buscar todo de la base de datos con la pagination incluidoo
   async findAll(paginationDto: PaginationDto) {
 
     const { page, limit } = paginationDto
