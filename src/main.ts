@@ -8,6 +8,8 @@ async function bootstrap() {
 
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
 
+
+    // COX1
     AppModule,
     {
       transport: Transport.TCP,
@@ -29,7 +31,7 @@ async function bootstrap() {
 
 
   await app.listen();
-  logger.log(`products microservice corriendo en el puerto ${envs.port}`);
+  logger.log(`products microservice corriendo en el puertoooo ${envs.port}`);
 
 }
 bootstrap();
