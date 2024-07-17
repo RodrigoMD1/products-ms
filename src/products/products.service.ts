@@ -70,16 +70,13 @@ export class ProductsService extends PrismaClient implements OnModuleInit {
   async update(id: number, updateProductDto: UpdateProductDto) {
 
     await this.findOne(id);
-
-
+    
     return this.product.update({
       where: { id },
       data: updateProductDto,
     });
 
   }
-
-
 
 
   async remove(id: number) {
@@ -96,9 +93,7 @@ export class ProductsService extends PrismaClient implements OnModuleInit {
         available: false
       }
     })
-
     return product;
-
   }
 
 
