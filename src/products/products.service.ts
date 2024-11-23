@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { HttpStatus, Injectable, Logger, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
@@ -70,7 +71,7 @@ export class ProductsService extends PrismaClient implements OnModuleInit {
   async update(id: number, updateProductDto: UpdateProductDto) {
 
     await this.findOne(id);
-    
+
     return this.product.update({
       where: { id },
       data: updateProductDto,
